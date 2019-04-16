@@ -4,9 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel = 'stylesheet' href = './css/carousel.css'>
+  <title>demo</title>
 </head>
 <body>
-  
+  <div class = 'slider'>
+    <ul>
+      <li class = 'slider-item slider-active'>
+        <img src = 'asset/pic1.jpg'>
+      </li>
+      <li class = 'slider-item'>
+        <img src = 'asset/pic2.jpg'>
+      </li>
+      <li class = 'slider-item'>
+        <img src = 'asset/pic3.jpg'>
+      </li>
+    </ul>
+    <ol class = 'indicators'>
+      <li class = 'indicators-li indicators-active'></li>
+      <li class = 'indicators-li'></li>
+      <li class = 'indicators-li'></li>
+    </ol>
+    <div class = 'slider-prev' data-dir = 'prev'><-</div>
+    <div class = 'slider-next' data-dir = 'next'>-></div>
+  </div>
+
+  <script src = './js/jquery.js'></script>
+  <script src = './js/carousel.js'></script>
 </body>
 </html>
