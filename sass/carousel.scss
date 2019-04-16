@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 .slider{
+  overflow: hidden;
   width: 100%;
   position: relative;
   user-select: none;
@@ -15,6 +16,7 @@
 .slider-item{
   width: 100%;
   display: none;
+  transition: all 0.6s ease;
   > img {
     max-width: 100%;
   }
@@ -62,6 +64,12 @@
   }
 }
 
+@mixin move-base{
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
 .slider-next{
   @include slider-move-base;
   right: 0;
@@ -70,4 +78,27 @@
 .slider-prev{
   @include slider-move-base;
   left: 0;
+}
+
+.slide-move-right{
+  @include move-base;
+  transform: translate3d(100%,0,0);
+}
+
+.slide-move-left{
+  @include move-base;
+  transform: translate3d(-100%,0,0);
+}
+
+.slider-active.cur-move-left{
+  transform: translate3d(-100%,0,0);
+}
+
+.slider-active.cur-move-right{
+  transform: translate3d(100%,0,0);
+}
+
+.cur-move-left,
+.cur-move-right {
+  transform: translate3d(0,0,0);
 }
