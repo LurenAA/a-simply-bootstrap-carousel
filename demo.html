@@ -1,35 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel = 'stylesheet' href = './css/carousel.css'>
+  <link rel='stylesheet' href='./src/css/demo.min.css'/>
+  <link rel='stylesheet' href='./src/css/iconfont.css'/>
   <title>demo</title>
 </head>
+
 <body>
-  <div class = 'slider'>
+  <div class='carousel-slider'>
     <ul>
-      <li class = 'slider-item slider-active'>
-        <img src = 'asset/pic1.jpg'>
+      <li class='carousel-slider-item carousel-slider-active'>
+        <img src='asset/pic1.jpg'>
       </li>
-      <li class = 'slider-item'>
-        <img src = 'asset/pic2.jpg'>
+      <li class='carousel-slider-item'>
+        <img src='asset/pic2.jpg'>
       </li>
-      <li class = 'slider-item'>
-        <img src = 'asset/pic3.jpg'>
+      <li class='carousel-slider-item'>
+        <img src='asset/pic3.jpg'>
       </li>
     </ul>
-    <ol class = 'indicators'>
-      <li class = 'indicators-li indicators-active'></li>
-      <li class = 'indicators-li'></li>
-      <li class = 'indicators-li'></li>
+    <ol class='carousel-indicators'>
+      <li class='indicators-li indicators-active'></li>
+      <li class='indicators-li'></li>
+      <li class='indicators-li'></li>
     </ol>
-    <div class = 'slider-prev' data-dir = 'prev'><-</div>
-    <div class = 'slider-next' data-dir = 'next'>-></div>
+    <div class='carousel-slider-prev' data-dir='prev'>
+      <i class='iconfont icon-jiantou_xiangzuoliangci'></i>
+    </div> 
+    <div class='carousel-slider-next' data-dir='next'>
+      <i class='iconfont icon-jiantou_xiangyouliangci'></i>
+    </div>
   </div>
-
-  <script src = './js/jquery.js'></script>
-  <script src = './js/carousel.js'></script>
+  <div class='carousel-slider'>
+    <ul>
+      <li class='carousel-slider-item carousel-slider-active'>
+        <img src='asset/pic1.jpg'>
+      </li>
+      <li class='carousel-slider-item'>
+        <img src='asset/pic2.jpg'>
+      </li>
+      <li class='carousel-slider-item'>
+        <img src='asset/pic3.jpg'>
+      </li>
+    </ul>
+    <ol class='carousel-indicators'>
+      <li class='indicators-li indicators-active'></li>
+      <li class='indicators-li'></li>
+      <li class='indicators-li'></li>
+    </ol>
+    <div class='carousel-slider-prev' data-dir='prev'>
+      <i class='iconfont icon-jiantou_xiangzuoliangci'></i>
+    </div> 
+    <div class='carousel-slider-next' data-dir='next'>
+      <i class='iconfont icon-jiantou_xiangyouliangci'></i>
+    </div>
+  </div>
+  <script src='./src/js/carousel.js'></script>
 </body>
+
 </html>
+<!DOCTYPE html>

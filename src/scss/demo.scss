@@ -1,0 +1,119 @@
+@mixin config_box () {
+  margin: 0;
+  padding: 0;
+}
+
+$dir_buttons: (prev, next);
+$light_dark: #bbbbbb;
+
+.carousel-slider {
+  @include config_box();
+  position: relative;
+
+  > ul {
+    @include config_box();
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &::after{
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+}
+
+.carousel-slider-item {
+  @include config_box();
+  float: left;
+  margin-right: -100%;
+  width: 100%;
+  display: none;
+  transition: transform 0.6s ease;
+
+  > img {
+    width: 100%;
+  }
+}
+
+.carousel-indicators{
+  @include config_box();
+  position: absolute;
+  list-style: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@each $dir in $dir_buttons {
+  .carousel-slider-#{$dir}{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    @if $dir == prev {
+      left: 0;
+    } @else {
+      right: 0;
+    }
+    &:hover {
+      background: fade-out($light_dark, 0.6); 
+
+      > i{
+        color: #fff;
+      } 
+    }
+    > i {
+      font-size: 30px;
+      color: $light_dark;
+    }
+  }
+}
+
+.carousel-slider-active{
+  display: block;
+}
+
+.carousel-indicators{
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.indicators-li{
+  width: 40px;
+  height: 3px;
+  background-color: $light_dark;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.indicators-active{
+  background-color: #fff;
+}
+
+.carousel-slider-item-pre {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.carousel-slider-item-next {
+  transform: translate3d(100%, 0, 0);
+}
+
+.carousel-slider-item-cur-to-pre {
+  transform: translate3d(100%, 0, 0);
+}
+
+.carousel-slider-item-cur-to-next {
+  transform: translate3d(-100%, 0, 0);
+}
