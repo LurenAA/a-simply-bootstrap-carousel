@@ -76,14 +76,17 @@
     }
 
     [autoPlayhandler]() {
+      const hasVisibility = document.visibilityState
       if(!this.autoPlayTimer){
         return 
       }
-      let info = this[getMoveInfo]({
-        className: 'carousel-slider-next',
-        ele: this.target.querySelector('.carousel-slider-next')
-      })
-      this[play](info)
+      if(!hasVisibility || document.visibilityState === 'visible'){
+        let info = this[getMoveInfo]({
+          className: 'carousel-slider-next',
+          ele: this.target.querySelector('.carousel-slider-next')
+        })
+        this[play](info)
+      }
       this[autoplay]()
     }
 
